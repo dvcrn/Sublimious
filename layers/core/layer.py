@@ -3,20 +3,18 @@ class Layer():
 
     required_packages = [
         "sublimious",
+        "Package Control",
         "Vintage-Origami",
         "Vintageous",
+        "Vintageous​Plugin​Surround",
         "Origami",
-        "Package Control",
         "SublimeLinter",
         "Surround",
-        "Theme - Brogrammer",
-        "Theme - Nil",
-        "Theme - Soda",
-        "Theme - Spacegray",
         "BracketHighlighter",
         "AdvancedNewFile",
+        "InactivePanes",
         "Theme - Soda SolarizedDark",
-        "InactivePanes"
+        "Tab Filter",
     ]
 
     sublimious_keymap = [
@@ -67,7 +65,7 @@ class Layer():
         {"keys": ["p", "c"], "command": "advanced_new_file_new", "description": "create file"},
 
         # ----- Buffers
-        {"keys": ["tab"], "command": "prev_view_in_stack", "description": "previous view"},
+        {"keys": ["tab"], "command": "next_view", "description": "previous buffer"},
 
         # ----- Errors
         {"keys": ["e"], "category": "errors"},
@@ -82,6 +80,7 @@ class Layer():
         # ----- Buffer
         {"keys": ["b"], "category": "buffer"},
         {"keys": ["b", "m"], "command": "advanced_new_file_move", "description": "move/rename file"},
+        {"keys": ["b", "b"], "command": "tab_filter", "description": "navigate buffers"},
 
         # ----- Toggles
         {"keys": ["t"], "category": "toggles"},
@@ -89,6 +88,7 @@ class Layer():
         {"keys": ["t", "t"], "command": "toggle_side_bar", "description": "toggle sidebar"},
         {"keys": ["t", "l"], "command": "toggle_setting", "args": {"setting": "line_numbers"}, "description": "toggle line numbers"},
         {"keys": ["t", "m"], "command": "toggle_minimap", "args": {}, "description": "toggle minimap"},
+        {"keys": ["t", "t"], "command": "toggle_tabs", "args": {}, "description": "toggle tabs"},
 
         # ----- Meta
         {"keys": ["_"], "category": "meta"},
