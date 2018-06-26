@@ -25,6 +25,14 @@ layers = [
     # 'clojure'
 ]
 
+
+"""
+Add repository URLs here if these are needed to install some of your packages.
+"""
+repositories = [
+
+]
+
 """
 Everything that is not part of a layer.
 These packages will be installed through package control
