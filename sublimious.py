@@ -54,6 +54,22 @@ class Sublimious():
         for layer in self.collector.get_layers():
             layer.init(collected_config)
 
+        # Add repositories
+        repositories = self.collector.get_user_config().repositories
+
+        pctl_settings_file = os.path.join(
+            self.user_dir,
+            "Package Control.sublime-settings"
+        )
+        with open(pctl_settings_file, "r") as pctl_settings:
+            data = json.load(pctl_settings)
+            if repositories:
+                data["repositories"] = repositories
+            else:
+                data["repositories"] = []
+            with open(pctl_settings_file, "w") as pctl_settings:
+                json.dump(data, pctl_settings)
+
         # Collect all packages
         all_packages = self.collector.collect_key("required_packages") + self.collector.get_user_config().additional_packages
         package_controller.install_packages(all_packages, callback=self.after_install)
